@@ -1,6 +1,6 @@
 {
   "checksum": "ed1abc0419c6ab5295f1d97f07d645a8",
-  "root": "melange-project@link-dev:./esy.json",
+  "root": "buckle@link-dev:./esy.json",
   "node": {
     "ocaml@4.12.0@d41d8cd9": {
       "id": "ocaml@4.12.0@d41d8cd9",
@@ -15,20 +15,6 @@
       "overrides": [],
       "dependencies": [],
       "devDependencies": []
-    },
-    "melange-project@link-dev:./esy.json": {
-      "id": "melange-project@link-dev:./esy.json",
-      "name": "melange-project",
-      "version": "link-dev:./esy.json",
-      "source": { "type": "link-dev", "path": ".", "manifest": "esy.json" },
-      "overrides": [],
-      "dependencies": [
-        "ocaml@4.12.0@d41d8cd9",
-        "melange@github:melange-re/melange#0987f1d582822dfe747095e586ec9878c83510ad@d41d8cd9",
-        "@opam/ocaml-lsp-server@opam:1.7.0@2cdbe0ed"
-      ],
-      "devDependencies": [],
-      "installConfig": { "pnp": false }
     },
     "melange@github:melange-re/melange#0987f1d582822dfe747095e586ec9878c83510ad@d41d8cd9": {
       "id":
@@ -49,6 +35,20 @@
         "@opam/dune-action-plugin@opam:2.9.0@a29d2a8f",
         "@opam/dune@opam:2.9.0@489e77a9",
         "@opam/cmdliner@opam:1.0.4@93208aac"
+      ],
+      "devDependencies": [],
+      "installConfig": { "pnp": false }
+    },
+    "buckle@link-dev:./esy.json": {
+      "id": "buckle@link-dev:./esy.json",
+      "name": "buckle",
+      "version": "link-dev:./esy.json",
+      "source": { "type": "link-dev", "path": ".", "manifest": "esy.json" },
+      "overrides": [],
+      "dependencies": [
+        "ocaml@4.12.0@d41d8cd9",
+        "melange@github:melange-re/melange#0987f1d582822dfe747095e586ec9878c83510ad@d41d8cd9",
+        "@opam/ocaml-lsp-server@opam:1.7.0@2cdbe0ed"
       ],
       "devDependencies": [],
       "installConfig": { "pnp": false }
