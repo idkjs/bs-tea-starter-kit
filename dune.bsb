@@ -603,8 +603,140 @@
 (action
  (progn (dynamic-run bsb_helper -bs-ns Buckle -root /Users/mando/Github/bs-tea-starter-kit -cwd ./src %{ast_deps}) (run bsc -bs-ns Buckle -bs-re-out -I . -I ../.melange.eobjs -I ../node_modules/bs-css/src -I ../node_modules/bs-css-emotion/src -I ../node_modules/bucklescript-tea/src-ocaml   -w a -bs-package-name buckle -bs-package-output commonjs:./src:.bs.js -o Usage-Buckle.cmj %{inputs})))
 (enabled_if (= %{ocaml_version} "4.12.0")) )
+ (rule
+(targets  tester.ast)
+ (deps (:inputs  tester.re) )
+(action
+ (run bsc  -w a  -absname -bs-ast -o %{targets} %{inputs}))
+(enabled_if (= %{ocaml_version} "4.12.0")) )
+ (rule
+(targets  tester-Buckle.cmj tester-Buckle.cmi tester-Buckle.cmt tester.bs.js)
+ (mode (promote (until-clean) (only tester.bs.js)))(deps (:inputs  tester.ast)  (:ast_deps .././src/tester.ast ) ../bsconfig.json ../.melange.eobjs/Buckle.cmi(alias ../node_modules/bs-css/src/bsb_world)(alias ../node_modules/bs-css-emotion/src/bsb_world)(alias ../node_modules/bucklescript-tea/src-ocaml/bsb_world))
+(action
+ (progn (dynamic-run bsb_helper -bs-ns Buckle -root /Users/mando/Github/bs-tea-starter-kit -cwd ./src %{ast_deps}) (run bsc -bs-ns Buckle -bs-re-out -I . -I ../.melange.eobjs -I ../node_modules/bs-css/src -I ../node_modules/bs-css-emotion/src -I ../node_modules/bucklescript-tea/src-ocaml   -w a -bs-package-name buckle -bs-package-output commonjs:./src:.bs.js -o tester-Buckle.cmj %{inputs})))
+(enabled_if (= %{ocaml_version} "4.12.0")) )
+ (rule
+(targets  test_client.ast)
+ (deps (:inputs  test_client.re) )
+(action
+ (run bsc  -w a  -absname -bs-ast -o %{targets} %{inputs}))
+(enabled_if (= %{ocaml_version} "4.12.0")) )
+ (rule
+(targets  test_client-Buckle.cmj test_client-Buckle.cmi test_client-Buckle.cmt test_client.bs.js)
+ (mode (promote (until-clean) (only test_client.bs.js)))(deps (:inputs  test_client.ast)  (:ast_deps .././src/test_client.ast ) ../bsconfig.json ../.melange.eobjs/Buckle.cmi(alias ../node_modules/bs-css/src/bsb_world)(alias ../node_modules/bs-css-emotion/src/bsb_world)(alias ../node_modules/bucklescript-tea/src-ocaml/bsb_world))
+(action
+ (progn (dynamic-run bsb_helper -bs-ns Buckle -root /Users/mando/Github/bs-tea-starter-kit -cwd ./src %{ast_deps}) (run bsc -bs-ns Buckle -bs-re-out -I . -I ../.melange.eobjs -I ../node_modules/bs-css/src -I ../node_modules/bs-css-emotion/src -I ../node_modules/bucklescript-tea/src-ocaml   -w a -bs-package-name buckle -bs-package-output commonjs:./src:.bs.js -o test_client-Buckle.cmj %{inputs})))
+(enabled_if (= %{ocaml_version} "4.12.0")) )
+ (rule
+(targets  test_client_drag.ast)
+ (deps (:inputs  test_client_drag.re) )
+(action
+ (run bsc  -w a  -absname -bs-ast -o %{targets} %{inputs}))
+(enabled_if (= %{ocaml_version} "4.12.0")) )
+ (rule
+(targets  test_client_drag-Buckle.cmj test_client_drag-Buckle.cmi test_client_drag-Buckle.cmt test_client_drag.bs.js)
+ (mode (promote (until-clean) (only test_client_drag.bs.js)))(deps (:inputs  test_client_drag.ast)  (:ast_deps .././src/test_client_drag.ast ) ../bsconfig.json ../.melange.eobjs/Buckle.cmi(alias ../node_modules/bs-css/src/bsb_world)(alias ../node_modules/bs-css-emotion/src/bsb_world)(alias ../node_modules/bucklescript-tea/src-ocaml/bsb_world))
+(action
+ (progn (dynamic-run bsb_helper -bs-ns Buckle -root /Users/mando/Github/bs-tea-starter-kit -cwd ./src %{ast_deps}) (run bsc -bs-ns Buckle -bs-re-out -I . -I ../.melange.eobjs -I ../node_modules/bs-css/src -I ../node_modules/bs-css-emotion/src -I ../node_modules/bucklescript-tea/src-ocaml   -w a -bs-package-name buckle -bs-package-output commonjs:./src:.bs.js -o test_client_drag-Buckle.cmj %{inputs})))
+(enabled_if (= %{ocaml_version} "4.12.0")) )
+ (rule
+(targets  test_client_counter.ast)
+ (deps (:inputs  test_client_counter.re) )
+(action
+ (run bsc  -w a  -absname -bs-ast -o %{targets} %{inputs}))
+(enabled_if (= %{ocaml_version} "4.12.0")) )
+ (rule
+(targets  test_client_counter-Buckle.cmj test_client_counter-Buckle.cmi test_client_counter-Buckle.cmt test_client_counter.bs.js)
+ (mode (promote (until-clean) (only test_client_counter.bs.js)))(deps (:inputs  test_client_counter.ast)  (:ast_deps .././src/test_client_counter.ast ) ../bsconfig.json ../.melange.eobjs/Buckle.cmi(alias ../node_modules/bs-css/src/bsb_world)(alias ../node_modules/bs-css-emotion/src/bsb_world)(alias ../node_modules/bucklescript-tea/src-ocaml/bsb_world))
+(action
+ (progn (dynamic-run bsb_helper -bs-ns Buckle -root /Users/mando/Github/bs-tea-starter-kit -cwd ./src %{ast_deps}) (run bsc -bs-ns Buckle -bs-re-out -I . -I ../.melange.eobjs -I ../node_modules/bs-css/src -I ../node_modules/bs-css-emotion/src -I ../node_modules/bucklescript-tea/src-ocaml   -w a -bs-package-name buckle -bs-package-output commonjs:./src:.bs.js -o test_client_counter-Buckle.cmj %{inputs})))
+(enabled_if (= %{ocaml_version} "4.12.0")) )
+ (rule
+(targets  test_client_http_task.ast)
+ (deps (:inputs  test_client_http_task.re) )
+(action
+ (run bsc  -w a  -absname -bs-ast -o %{targets} %{inputs}))
+(enabled_if (= %{ocaml_version} "4.12.0")) )
+ (rule
+(targets  test_client_http_task-Buckle.cmj test_client_http_task-Buckle.cmi test_client_http_task-Buckle.cmt test_client_http_task.bs.js)
+ (mode (promote (until-clean) (only test_client_http_task.bs.js)))(deps (:inputs  test_client_http_task.ast)  (:ast_deps .././src/test_client_http_task.ast ) ../bsconfig.json ../.melange.eobjs/Buckle.cmi(alias ../node_modules/bs-css/src/bsb_world)(alias ../node_modules/bs-css-emotion/src/bsb_world)(alias ../node_modules/bucklescript-tea/src-ocaml/bsb_world))
+(action
+ (progn (dynamic-run bsb_helper -bs-ns Buckle -root /Users/mando/Github/bs-tea-starter-kit -cwd ./src %{ast_deps}) (run bsc -bs-ns Buckle -bs-re-out -I . -I ../.melange.eobjs -I ../node_modules/bs-css/src -I ../node_modules/bs-css-emotion/src -I ../node_modules/bucklescript-tea/src-ocaml   -w a -bs-package-name buckle -bs-package-output commonjs:./src:.bs.js -o test_client_http_task-Buckle.cmj %{inputs})))
+(enabled_if (= %{ocaml_version} "4.12.0")) )
+ (rule
+(targets  test_client_btn_update_span.ast)
+ (deps (:inputs  test_client_btn_update_span.re) )
+(action
+ (run bsc  -w a  -absname -bs-ast -o %{targets} %{inputs}))
+(enabled_if (= %{ocaml_version} "4.12.0")) )
+ (rule
+(targets  test_client_btn_update_span-Buckle.cmj test_client_btn_update_span-Buckle.cmi test_client_btn_update_span-Buckle.cmt test_client_btn_update_span.bs.js)
+ (mode (promote (until-clean) (only test_client_btn_update_span.bs.js)))(deps (:inputs  test_client_btn_update_span.ast)  (:ast_deps .././src/test_client_btn_update_span.ast ) ../bsconfig.json ../.melange.eobjs/Buckle.cmi(alias ../node_modules/bs-css/src/bsb_world)(alias ../node_modules/bs-css-emotion/src/bsb_world)(alias ../node_modules/bucklescript-tea/src-ocaml/bsb_world))
+(action
+ (progn (dynamic-run bsb_helper -bs-ns Buckle -root /Users/mando/Github/bs-tea-starter-kit -cwd ./src %{ast_deps}) (run bsc -bs-ns Buckle -bs-re-out -I . -I ../.melange.eobjs -I ../node_modules/bs-css/src -I ../node_modules/bs-css-emotion/src -I ../node_modules/bucklescript-tea/src-ocaml   -w a -bs-package-name buckle -bs-package-output commonjs:./src:.bs.js -o test_client_btn_update_span-Buckle.cmj %{inputs})))
+(enabled_if (= %{ocaml_version} "4.12.0")) )
+ (rule
+(targets  test_client_on_with_options.ast)
+ (deps (:inputs  test_client_on_with_options.re) )
+(action
+ (run bsc  -w a  -absname -bs-ast -o %{targets} %{inputs}))
+(enabled_if (= %{ocaml_version} "4.12.0")) )
+ (rule
+(targets  test_client_on_with_options-Buckle.cmj test_client_on_with_options-Buckle.cmi test_client_on_with_options-Buckle.cmt test_client_on_with_options.bs.js)
+ (mode (promote (until-clean) (only test_client_on_with_options.bs.js)))(deps (:inputs  test_client_on_with_options.ast)  (:ast_deps .././src/test_client_on_with_options.ast ) ../bsconfig.json ../.melange.eobjs/Buckle.cmi(alias ../node_modules/bs-css/src/bsb_world)(alias ../node_modules/bs-css-emotion/src/bsb_world)(alias ../node_modules/bucklescript-tea/src-ocaml/bsb_world))
+(action
+ (progn (dynamic-run bsb_helper -bs-ns Buckle -root /Users/mando/Github/bs-tea-starter-kit -cwd ./src %{ast_deps}) (run bsc -bs-ns Buckle -bs-re-out -I . -I ../.melange.eobjs -I ../node_modules/bs-css/src -I ../node_modules/bs-css-emotion/src -I ../node_modules/bucklescript-tea/src-ocaml   -w a -bs-package-name buckle -bs-package-output commonjs:./src:.bs.js -o test_client_on_with_options-Buckle.cmj %{inputs})))
+(enabled_if (= %{ocaml_version} "4.12.0")) )
+ (rule
+(targets  test_client_attribute_removal.ast)
+ (deps (:inputs  test_client_attribute_removal.re) )
+(action
+ (run bsc  -w a  -absname -bs-ast -o %{targets} %{inputs}))
+(enabled_if (= %{ocaml_version} "4.12.0")) )
+ (rule
+(targets  test_client_attribute_removal-Buckle.cmj test_client_attribute_removal-Buckle.cmi test_client_attribute_removal-Buckle.cmt test_client_attribute_removal.bs.js)
+ (mode (promote (until-clean) (only test_client_attribute_removal.bs.js)))(deps (:inputs  test_client_attribute_removal.ast)  (:ast_deps .././src/test_client_attribute_removal.ast ) ../bsconfig.json ../.melange.eobjs/Buckle.cmi(alias ../node_modules/bs-css/src/bsb_world)(alias ../node_modules/bs-css-emotion/src/bsb_world)(alias ../node_modules/bucklescript-tea/src-ocaml/bsb_world))
+(action
+ (progn (dynamic-run bsb_helper -bs-ns Buckle -root /Users/mando/Github/bs-tea-starter-kit -cwd ./src %{ast_deps}) (run bsc -bs-ns Buckle -bs-re-out -I . -I ../.melange.eobjs -I ../node_modules/bs-css/src -I ../node_modules/bs-css-emotion/src -I ../node_modules/bucklescript-tea/src-ocaml   -w a -bs-package-name buckle -bs-package-output commonjs:./src:.bs.js -o test_client_attribute_removal-Buckle.cmj %{inputs})))
+(enabled_if (= %{ocaml_version} "4.12.0")) )
+ (rule
+(targets  test_client_counter_debug_program.ast)
+ (deps (:inputs  test_client_counter_debug_program.re) )
+(action
+ (run bsc  -w a  -absname -bs-ast -o %{targets} %{inputs}))
+(enabled_if (= %{ocaml_version} "4.12.0")) )
+ (rule
+(targets  test_client_counter_debug_program-Buckle.cmj test_client_counter_debug_program-Buckle.cmi test_client_counter_debug_program-Buckle.cmt test_client_counter_debug_program.bs.js)
+ (mode (promote (until-clean) (only test_client_counter_debug_program.bs.js)))(deps (:inputs  test_client_counter_debug_program.ast)  (:ast_deps .././src/test_client_counter_debug_program.ast ) ../bsconfig.json ../.melange.eobjs/Buckle.cmi(alias ../node_modules/bs-css/src/bsb_world)(alias ../node_modules/bs-css-emotion/src/bsb_world)(alias ../node_modules/bucklescript-tea/src-ocaml/bsb_world))
+(action
+ (progn (dynamic-run bsb_helper -bs-ns Buckle -root /Users/mando/Github/bs-tea-starter-kit -cwd ./src %{ast_deps}) (run bsc -bs-ns Buckle -bs-re-out -I . -I ../.melange.eobjs -I ../node_modules/bs-css/src -I ../node_modules/bs-css-emotion/src -I ../node_modules/bucklescript-tea/src-ocaml   -w a -bs-package-name buckle -bs-package-output commonjs:./src:.bs.js -o test_client_counter_debug_program-Buckle.cmj %{inputs})))
+(enabled_if (= %{ocaml_version} "4.12.0")) )
+ (rule
+(targets  test_client_counter_debug_beginner.ast)
+ (deps (:inputs  test_client_counter_debug_beginner.re) )
+(action
+ (run bsc  -w a  -absname -bs-ast -o %{targets} %{inputs}))
+(enabled_if (= %{ocaml_version} "4.12.0")) )
+ (rule
+(targets  test_client_counter_debug_beginner-Buckle.cmj test_client_counter_debug_beginner-Buckle.cmi test_client_counter_debug_beginner-Buckle.cmt test_client_counter_debug_beginner.bs.js)
+ (mode (promote (until-clean) (only test_client_counter_debug_beginner.bs.js)))(deps (:inputs  test_client_counter_debug_beginner.ast)  (:ast_deps .././src/test_client_counter_debug_beginner.ast ) ../bsconfig.json ../.melange.eobjs/Buckle.cmi(alias ../node_modules/bs-css/src/bsb_world)(alias ../node_modules/bs-css-emotion/src/bsb_world)(alias ../node_modules/bucklescript-tea/src-ocaml/bsb_world))
+(action
+ (progn (dynamic-run bsb_helper -bs-ns Buckle -root /Users/mando/Github/bs-tea-starter-kit -cwd ./src %{ast_deps}) (run bsc -bs-ns Buckle -bs-re-out -I . -I ../.melange.eobjs -I ../node_modules/bs-css/src -I ../node_modules/bs-css-emotion/src -I ../node_modules/bucklescript-tea/src-ocaml   -w a -bs-package-name buckle -bs-package-output commonjs:./src:.bs.js -o test_client_counter_debug_beginner-Buckle.cmj %{inputs})))
+(enabled_if (= %{ocaml_version} "4.12.0")) )
+ (rule
+(targets  test_client_counter_debug_standard.ast)
+ (deps (:inputs  test_client_counter_debug_standard.re) )
+(action
+ (run bsc  -w a  -absname -bs-ast -o %{targets} %{inputs}))
+(enabled_if (= %{ocaml_version} "4.12.0")) )
+ (rule
+(targets  test_client_counter_debug_standard-Buckle.cmj test_client_counter_debug_standard-Buckle.cmi test_client_counter_debug_standard-Buckle.cmt test_client_counter_debug_standard.bs.js)
+ (mode (promote (until-clean) (only test_client_counter_debug_standard.bs.js)))(deps (:inputs  test_client_counter_debug_standard.ast)  (:ast_deps .././src/test_client_counter_debug_standard.ast ) ../bsconfig.json ../.melange.eobjs/Buckle.cmi(alias ../node_modules/bs-css/src/bsb_world)(alias ../node_modules/bs-css-emotion/src/bsb_world)(alias ../node_modules/bucklescript-tea/src-ocaml/bsb_world))
+(action
+ (progn (dynamic-run bsb_helper -bs-ns Buckle -root /Users/mando/Github/bs-tea-starter-kit -cwd ./src %{ast_deps}) (run bsc -bs-ns Buckle -bs-re-out -I . -I ../.melange.eobjs -I ../node_modules/bs-css/src -I ../node_modules/bs-css-emotion/src -I ../node_modules/bucklescript-tea/src-ocaml   -w a -bs-package-name buckle -bs-package-output commonjs:./src:.bs.js -o test_client_counter_debug_standard-Buckle.cmj %{inputs})))
+(enabled_if (= %{ocaml_version} "4.12.0")) )
  
-(alias (name bsb_world)(deps  Usage.bs.js Demo.bs.js)
+(alias (name bsb_world)(deps  test_client_counter_debug_standard.bs.js test_client_counter_debug_beginner.bs.js test_client_counter_debug_program.bs.js test_client_attribute_removal.bs.js test_client_on_with_options.bs.js test_client_btn_update_span.bs.js test_client_http_task.bs.js test_client_counter.bs.js test_client_drag.bs.js test_client.bs.js tester.bs.js Usage.bs.js Demo.bs.js)
 (enabled_if (= %{ocaml_version} "4.12.0"))))
 
 (subdir ./.melange.eobjs(rule

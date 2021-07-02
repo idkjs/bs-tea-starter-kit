@@ -53,12 +53,13 @@ let view = model =>
    or even to pass a message into the event loop.  You can even expose the
    constructors to the messages to javascript via the above [@@bs.deriving {accessors}]
    attribute on the `msg` type or manually, that way even javascript can use it safely. */
-let main = () =>{
+let main = () => {
   Js.log("Hello, from Main!");
   beginnerProgram({
     /* The beginnerProgram just takes a set model state and the update and view functions */
     model: init(), /* Since model is a set value here, we call our init function to generate that value */
     update,
     view,
-  })};
-let _ = main();
+  });
+};
+main();
